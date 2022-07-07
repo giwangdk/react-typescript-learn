@@ -1,3 +1,4 @@
+import React from 'react'
 /**
  * Things you could try:
  *
@@ -8,11 +9,11 @@
  * React.ReactChild[];
  */
 
- type BoxProps = { children: any };
+ type BoxProps = { children: React.ReactNode, style?:React.ReactCSSProperties };
 
- const Box = ({ children }: BoxProps) => {
+ const Box = ({ children, style={} }: BoxProps) => {
    return (
-     <section style={{ padding: "1em", border: "5px solid purple" }}>
+     <section style={{ padding: "1em", border: "5px solid purple", ...style }}>
        {children}
      </section>
    );
